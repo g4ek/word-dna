@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://mmaofh5vgnaw"]
 
 [ext_resource type="PackedScene" uid="uid://bi4a01h1dar48" path="res://assets/scenes/soup_pot.tscn" id="1_cb66b"]
+[ext_resource type="PackedScene" uid="uid://eptj8a16kcov" path="res://assets/scenes/letter.tscn" id="2_5gf0t"]
+[ext_resource type="PackedScene" uid="uid://b2i7f2fq83alc" path="res://assets/scenes/plate.tscn" id="2_dis88"]
 
 [node name="Game" type="Node2D" unique_id=1905470012]
 
 [node name="SoupPot" parent="." unique_id=238947446 instance=ExtResource("1_cb66b")]
+position = Vector2(73.99999, 90)
+scale = Vector2(5, 5)
 
 [node name="Words" type="Node" parent="." unique_id=367841244]
+
+[node name="Letter" parent="Words" unique_id=740032450 instance=ExtResource("2_5gf0t")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=734574848]
+position = Vector2(310.99997, -185)
+scale = Vector2(5, 5)
+
+[node name="Plate" parent="." unique_id=1489769611 instance=ExtResource("2_dis88")]
+position = Vector2(600, -83)
+scale = Vector2(2.6, 2.6)

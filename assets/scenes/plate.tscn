@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b2i7f2fq83alc"]
+
+[ext_resource type="Texture2D" uid="uid://d1qxstayyvhnh" path="res://assets/sprites/plate.png" id="1_iyats"]
+
+[node name="Plate" type="Area2D" unique_id=1489769611]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1625930415]
+scale = Vector2(3, 3)
+texture = ExtResource("1_iyats")

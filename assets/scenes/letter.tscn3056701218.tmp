@@ -4,18 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://ddng3axw72e6w" path="res://assets/sprites/Letters/default_letter.png" id="1_yc81e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i2beh"]
-radius = 17.0
+radius = 11.045361
 
 [node name="Letter" type="RigidBody2D" unique_id=740032450]
-input_pickable = true
-gravity_scale = 0.0
 script = ExtResource("1_i2beh")
 
 [node name="DefaultLetter" type="Sprite2D" parent="." unique_id=415757621]
-position = Vector2(3, 1)
-scale = Vector2(1.5, 1.5)
+position = Vector2(1, 0)
 texture = ExtResource("1_yc81e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1885776369]
-position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_i2beh")
