@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bi4a01h1dar48"]
+
+[ext_resource type="Texture2D" uid="uid://ddrb0p22ar2ud" path="res://assets/sprites/soup_pot.png" id="1_37nre"]
+
+[node name="SoupPot" type="Node2D" unique_id=238947446]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1241667298]
+scale = Vector2(3, 3)
+texture = ExtResource("1_37nre")
