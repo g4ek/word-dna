@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bp1xm627ct5mg"]
 
 [ext_resource type="FontFile" uid="uid://c82v6nnwr2qvs" path="res://assets/fonts/fonts/connection/ConnectionBold.otf" id="1_2qta7"]
+[ext_resource type="Script" uid="uid://b56a030ds1i7q" path="res://assets/scripts/level_selection.gd" id="1_scpca"]
 
 [node name="LevelSelection" type="Control" unique_id=110255353]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_scpca")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=952005783]
 layout_mode = 1
@@ -24,6 +26,7 @@ offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 50
 columns = 5
 
 [node name="L1Button" type="Button" parent="GridContainer" unique_id=1978314970]
@@ -31,7 +34,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2qta7")
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "Level
+1"
 autowrap_mode = 1
 
 [node name="L2Button" type="Button" parent="GridContainer" unique_id=265295941]
@@ -39,7 +43,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2qta7")
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "Level
+2"
 autowrap_mode = 1
 
 [node name="L3Button" type="Button" parent="GridContainer" unique_id=1767981276]
@@ -47,7 +52,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2qta7")
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "Level
+3"
 autowrap_mode = 1
 
 [node name="L4Button" type="Button" parent="GridContainer" unique_id=527990910]
@@ -55,7 +61,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2qta7")
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "Level
+4"
 autowrap_mode = 1
 
 [node name="L5Button" type="Button" parent="GridContainer" unique_id=620998525]
@@ -63,5 +70,62 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_2qta7")
 theme_override_font_sizes/font_size = 48
-text = "Level 1"
+text = "Level
+5 "
 autowrap_mode = 1
+
+[node name="L6Button" type="Button" parent="GridContainer" unique_id=1784734076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2qta7")
+theme_override_font_sizes/font_size = 48
+text = "Level
+6"
+autowrap_mode = 1
+
+[node name="L7Button" type="Button" parent="GridContainer" unique_id=1513344243]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2qta7")
+theme_override_font_sizes/font_size = 48
+text = "Level
+7"
+autowrap_mode = 1
+
+[node name="L8Button" type="Button" parent="GridContainer" unique_id=1962475557]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2qta7")
+theme_override_font_sizes/font_size = 48
+text = "Level
+8"
+autowrap_mode = 1
+
+[node name="L9Button" type="Button" parent="GridContainer" unique_id=253750971]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2qta7")
+theme_override_font_sizes/font_size = 48
+text = "Level
+9"
+autowrap_mode = 1
+
+[node name="L10Button" type="Button" parent="GridContainer" unique_id=750747298]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_2qta7")
+theme_override_font_sizes/font_size = 48
+text = "Level
+10"
+autowrap_mode = 1
+
+[connection signal="pressed" from="GridContainer/L1Button" to="." method="_on_l_1_button_pressed"]
+[connection signal="pressed" from="GridContainer/L2Button" to="." method="_on_l_2_button_pressed"]
+[connection signal="pressed" from="GridContainer/L3Button" to="." method="_on_l_3_button_pressed"]
+[connection signal="pressed" from="GridContainer/L4Button" to="." method="_on_l_4_button_pressed"]
+[connection signal="pressed" from="GridContainer/L5Button" to="." method="_on_l_5_button_pressed"]
+[connection signal="pressed" from="GridContainer/L6Button" to="." method="_on_l_6_button_pressed"]
+[connection signal="pressed" from="GridContainer/L7Button" to="." method="_on_l_7_button_pressed"]
+[connection signal="pressed" from="GridContainer/L8Button" to="." method="_on_l_8_button_pressed"]
+[connection signal="pressed" from="GridContainer/L9Button" to="." method="_on_l_9_button_pressed"]
+[connection signal="pressed" from="GridContainer/L10Button" to="." method="_on_l_10_button_pressed"]

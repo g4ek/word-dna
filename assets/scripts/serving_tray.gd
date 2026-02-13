@@ -8,18 +8,20 @@ extends Node2D
 @onready var main_menu_button: Button = $CanvasLayer/MainMenuButton
 @onready var next_level_button: Button = $CanvasLayer/NextLevelButton
 
+signal go_to_menu
+signal next_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	plate.level_won.connect(_on_plate_level_won)
 	kitchen_button.pressed.connect(_on_kitchen_button_pressed)
 	main_menu_button.pressed.connect(_on_menu_button_pressed)
-	next_level_button.pressed.connect(_on_menu_button_pressed)
+	next_level_button.pressed.connect(_on_next_level_button_pressed)
 	
-	start_level("yogurt") 
-	victory_label.visible = false
-	kitchen_button.visible = false
-	next_level_button.visible = false
+	start_level("mouse") 
+	victory_label.hide()
+	main_menu_button.hide()
+	next_level_button.hide()
 
 func start_level(target_word : String):
 	plate.build_word_slots(target_word)
@@ -29,15 +31,35 @@ func start_level(target_word : String):
 func _on_plate_level_won() -> void:
 	print("you won")
 	$CanvasLayer/VictoryLabel.text = "You won!"
-	victory_label.visible = true
-	next_level_button.visible = true
-	main_menu_button.visible = true
+	
+	victory_label.show()
+	next_level_button.show()
+	main_menu_button.show()
+	
+	victory_label.pivot_offset = victory_label.size / 2
+	next_level_button.pivot_offset = next_level_button.size / 2
+	main_menu_button.pivot_offset = main_menu_button.size / 2
+
+	victory_label.scale = Vector2(0, 0)
+	main_menu_button.scale = Vector2(0, 0)
+	next_level_button.scale = Vector2(0, 0)
+	
+	var tween = create_tween()
+	tween.tween_property(victory_label, "scale", Vector2(1, 1), \
+	.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_property(main_menu_button, "scale", Vector2(1, 1), \
+	.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	
+	tween.tween_property(next_level_button, "scale", Vector2(1, 1), \
+	.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	
 func _on_kitchen_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://assets/scenes/base_kitchen.tscn")
+
 	
 func _on_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://assets/ui/main_menu.tscn")
+	go_to_menu.emit()
 	
 func _on_next_level_button_pressed() -> void:
-	pass
+	next_level.emit()
